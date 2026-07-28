@@ -1,33 +1,36 @@
-name: Java CI with Gradle # 工作流的名称
+name: Java CI with Gradle
 
-on: # 触发工作流的事件
+on:
   push:
-    branches: [ "main" ] # 当代码推送到 master 分支时触发
+    branches: [ "main" ]      # 如果你的主分支是 master，改成 "master"
   pull_request:
-    branches: [ "main" ] # 当有 PR 指向 master 分支时触发
+    branches: [ "main" ]
 
-jobs: # 工作流中的任务
+jobs:
   build:
-    runs-on: ubuntu-latest # 在最新的 Ubuntu 环境上运行
+    runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout sources # 1. 检出你的代码
+    - name: Checkout sources
       uses: actions/checkout@v4
 
-    - name: Setup Java # 2. 设置 Java 环境
+    - name: Grant execute permission for gradlew
+      run: chmod +x gradlew
+
+    - name: Setup Java
       uses: actions/setup-java@v4
       with:
-        distribution: 'temurin' # 使用 Eclipse Temurin (原 AdoptOpenJDK)
-        java-version: '21' # 你的项目使用的 Java 版本，比如 21
+        distribution: 'temurin'
+        java-version: '21'
 
-    - name: Setup Gradle # 3. 设置 Gradle 环境（会缓存依赖，加速构建）
+    - name: Setup Gradle
       uses: gradle/actions/setup-gradle@v4
 
-    - name: Build with Gradle # 4. 执行构建命令
-      run: ./gradlew build # 使用项目的 Gradle Wrapper 进行构建
+    - name: Build with Gradle
+      run: ./gradlew build
 
-    - name: Upload build artifact # 5. 上传构建产物（生成的 .jar 文件）
+    - name: Upload build artifact
       uses: actions/upload-artifact@v4
       with:
-        name: Plugin-JAR # 产物的名称
-        path: build/libs/*.jar # 产物所在的路径
+        name: Plugin-JAR
+        path: build/libs/*.jar
