@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = 'shuoda'
+version = '1.0'
+compileJava.options.encoding = 'UTF-8'
+
+java {
+    toolchain {
+        languageVersion = JavaLanguageVersion.of(21)
+    }
+}
+
+repositories {
+    mavenCentral()
+    maven {
+        url = 'https://repo.papermc.io/repository/maven-public/'
+    }
+    maven {
+        url = 'http://maven.crast.us'
+        allowInsecureProtocol = true
+    }
+}
+
+dependencies {
+    compileOnly 'io.papermc.paper:paper-api:1.21.1-R0.1-SNAPSHOT'
+    implementation 'us.crast:MondoCommand:0.3'
+}
+
+jar.enabled = false
+
+shadowJar {
+    //relocate 'mondocommand', 'fun.demc.minisurkit.libs.mondocommand'
+    archiveBaseName.set('MiniSurvivalKit')
+    archiveVersion.set('Beta1.0')
+}
+
+// 让 build 任务依赖于 shadowJar
+build.dependsOn shadowJar
