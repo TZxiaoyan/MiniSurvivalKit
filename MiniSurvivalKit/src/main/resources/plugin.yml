@@ -1,0 +1,8 @@
+name: MiniSurvivalKit
+version: 1.0
+main: fun.demc.minisurkit.MiniSurvivalKit
+api-version: 1.19
+
+commands:
+  surkit:
+    description: MiniSurvivalKit 主命令

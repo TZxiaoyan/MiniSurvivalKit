@@ -1,0 +1,18 @@
+#command:enable
+enable_too_many_parameters: "{RED}Format error: Please use /surkit enable <effect>"
+enabled_an_effect: "{YELLOW}Enabled effect: "
+has_enabled: "{YELLOW}Effect is already enabled!"
+effect_does_not_extist: "{RED}Effect does not exist!"
+default: "The effect level is set to 1 by default. To change the level, use /surkit levelset <effect> <level>."
+#command:disable
+disable_too_many_parameters: "{RED}Format error: Please use /surkit disable <effect>"
+already_disabled: "{YELLOW}The effect has already been disabled！"
+disabled_an_effect: "{YELLOW}Disabled effect"
+#command:levelset
+levelset_too_many_parameters: "{RED}Format error: Please use /surkit levelset <effect> <level>"
+invalid_level: "{RED}Error: The second parameter must be the level you want to set for the effect (an integer between 1 and 255)"
+the_same_level: "{YELLOW}The level of the effect has already been set to this!"
+#command_list:
+list_too_many_parameters: "{RED}Format error: Please use /surkit list"
+no_effects_enabled: "{YELLOW}No effects are currently enabled."
+the_effects_has_been_enabled: "Enabled effects:\n"

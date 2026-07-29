@@ -1,0 +1,18 @@
+#command:enable
+enable_too_many_parameters: "{RED}格式错误：请使用/surkit enable <effect>"
+enabled_an_effect: "{YELLOW}已启用效果："
+has_enabled: "{YELLOW}效果已经启用过了！"
+effect_does_not_extist: "{RED}不存在的效果！"
+default: " 效果等级为 1 级（默认）。若要修改等级，请使用 /surkit levelset <效果> <等级>"
+#command:disable
+disable_too_many_parameters: "{RED}格式错误：请使用/surkit disable <effect>"
+already_disabled: "{YELLOW}效果已经被禁用过了！"
+disabled_an_effect: "{YELLOW}已禁用效果"
+#command:levelset
+levelset_too_many_parameters: "{RED}格式错误：请使用/surkit levelset <效果> <等级>"
+invalid_level: "{RED}错误：第二个参数为你想要设置的效果等级（1-255之间的整数）"
+the_same_level: "{YELLOW}效果已经是这个等级了！"
+#command_list:
+list_too_many_parameters: "{RED}格式错误：请使用 /surkit list"
+no_effects_enabled: "{YELLOW}当前没有启用的效果。"
+the_effects_has_been_enabled: "已启用的效果：\n"
