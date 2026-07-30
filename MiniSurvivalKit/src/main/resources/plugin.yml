@@ -6,3 +6,4 @@ api-version: 1.19
 commands:
   surkit:
     description: MiniSurvivalKit 主命令
+    permission: surkit.admin
